@@ -1,0 +1,69 @@
+=== yt-dlp (editor)===
+
+ytdlp -f "bv[width<=1280][height<=720]+ba" -S vcodec:vp9.2,vcodec:vp9,vcodec:h265,vcodec:h264,vcodec:vp8,vcodec:h263,vcodec:theora,vcodec:other -o "%(title)s [%(id)s] (format limited).%(ext)s" https://youtu.be/Kn56bMZ9OE8
+
+Broken Up:
+
+ytdlp
+	-f "bv[width<=1280][height<=720]+ba"
+	-S vcodec:vp9.2,vcodec:vp9,vcodec:h265,vcodec:h264,vcodec:vp8,vcodec:h263,vcodec:theora,vcodec:other
+	-o "%(title)s [%(id)s] (format limited).%(ext)s"
+	https://youtu.be/Kn56bMZ9OE8
+
+=== yt-dlp (chat)===
+
+```sh
+ytdlp -f "bv[width<=1280][height<=720]+ba" -S vcodec:vp9.2,vcodec:vp9,vcodec:h265,vcodec:h264,vcodec:vp8,vcodec:h263,vcodec:theora,vcodec:other -o "%(title)s [%(id)s] (format limited).%(ext)s" https://youtu.be/Kn56bMZ9OE8
+```
+
+Broken Up:
+```
+ytdlp
+	-f "bv[width<=1280][height<=720]+ba"
+	-S vcodec:vp9.2,vcodec:vp9,vcodec:h265,vcodec:h264,vcodec:vp8,vcodec:h263,vcodec:theora,vcodec:other
+	-o "%(title)s [%(id)s] (format limited).%(ext)s"
+	https://youtu.be/Kn56bMZ9OE8
+```
+
+=== FFmpeg (editor) ===
+
+ffmpeg -ss 2:00 -i sample_video.mov -i subs2.vtt -t 1:00 -s 960x540 -r 15 -c:v libx264 -c:a libvorbis -c:s copy -metadata:s:s language=eng -metadata:s:s title="UK English" reduced.mkv
+
+Broken Up:
+
+ffmpeg
+	-ss 2:00
+	-i sample_video.mov
+	-i subs2.vtt
+	-t 1:00
+	-s 960x540
+	-r 15
+	-c:v libx264
+	-c:a libvorbis
+	-c:s copy
+	-metadata:s:s language=eng
+	-metadata:s:s title="UK English"
+	reduced.mkv
+
+=== FFmpeg (chat) ===
+
+```sh
+ffmpeg -ss 2:00 -i sample_video.mov -i subs2.vtt -t 1:00 -s 960x540 -r 15 -c:v libx264 -c:a libvorbis -c:s copy -metadata:s:s language=eng -metadata:s:s title="UK English" reduced.mkv
+```sh
+
+Broken Up:
+```
+ffmpeg
+	-ss 2:00
+	-i sample_video.mov
+	-i subs2.vtt
+	-t 1:00
+	-s 960x540
+	-r 15
+	-c:v libx264
+	-c:a libvorbis
+	-c:s copy
+	-metadata:s:s language=eng
+	-metadata:s:s title="UK English"
+	reduced.mkv
+```

@@ -1,0 +1,196 @@
+<head>
+	<title>Commands</title>
+	<style>textarea {width: 100%}</style>
+</head>
+
+<p>1:</p>
+<textarea readonly>ytdlp https://youtu.be/bCF2bcqCkYs</textarea>
+
+<p>2:</p>
+<textarea rows="3" readonly>
+ytdlp --force-overwrites https://youtube.com/watch?v=bCF2bcqCkYs
+ytdlp --force-overwrites bCF2bcqCkYs</textarea>
+
+<p>3:</p>
+<textarea readonly>ytdlp -U</textarea>
+
+<p>4:</p>
+<textarea rows="4" readonly>
+ytdlp -o "%(title)s [%(id)s].%(ext)s" --force-overwrites https://youtu.be/bCF2bcqCkYs
+# You don't even need a space after '-o', so this works too:
+ytdlp -o"%(title)s [%(id)s].%(ext)s" --force-overwrites https://youtu.be/bCF2bcqCkYs</textarea>
+
+<p>5:</p>
+<textarea readonly>ytdlp -F https://youtu.be/bCF2bcqCkYs</textarea>
+
+<p>6:</p>
+<textarea readonly>ytdlp -f 140 https://youtu.be/bCF2bcqCkYs</textarea>
+
+<p>7:</p>
+<textarea rows="3" readonly>
+ytdlp -f ba --force-overwrites https://youtu.be/bCF2bcqCkYs
+ytdlp -f bv --force-overwrites https://youtu.be/bCF2bcqCkYs</textarea>
+
+<p>8:</p>
+<textarea readonly>ytdlp -f "bv[height&lt;=720]" --force-overwrites https://youtu.be/bCF2bcqCkYs</textarea>
+
+<p>9:</p>
+<textarea readonly>ytdlp -f "bv[height&lt;=720]+ba" --force-overwrites https://youtu.be/bCF2bcqCkYs</textarea>
+
+<p>10:</p>
+<textarea readonly>ytdlp -f "bv[width<=1280][height<=720]+ba" --force-overwrites https://youtu.be/bCF2bcqCkYs</textarea>
+
+<p>11:</p>
+<textarea readonly>ytdlp -S vcodec:h264,vcodec:vp8,vcodec:h263,vcodec:theora,vcodec:other --force-overwrites https://youtu.be/bCF2bcqCkYs</textarea>
+
+<p>12:</p>
+<textarea readonly>ytdlp --list-subs https://youtu.be/Kn56bMZ9OE8</textarea>
+
+<p>13:</p>
+<textarea readonly>ytdlp -f 396 --embed-subs --force-overwrites https://youtu.be/Kn56bMZ9OE8</textarea>
+
+<p>14:</p>
+<textarea rows="3" readonly>
+ytdlp -f 396 --embed-subs --sub-lang en,en-GB --force-overwrites https://youtu.be/Kn56bMZ9OE8
+ytdlp -f 396 --embed-subs --sub-lang all --force-overwrites https://youtu.be/Kn56bMZ9OE8</textarea>
+
+<p>15:</p>
+<textarea rows="4" readonly>
+ytdlp -f 396 --embed-subs -o my_template.webm https://youtu.be/Kn56bMZ9OE8
+# OR
+ytdlp -f 396 --embed-subs -o my_template https://youtu.be/Kn56bMZ9OE8</textarea>
+
+<p>16:</p>
+<textarea rows="3" readonly>
+# Works
+ytdlp -f 396 --embed-subs -o my_template.mp4 https://youtu.be/Kn56bMZ9OE8</textarea>
+
+<p>17:</p>
+<textarea readonly>ytdlp --skip-download --write-subs --sub-lang all --force-overwrites https://youtu.be/Kn56bMZ9OE8</textarea>
+
+<p>18:</p>
+<textarea readonly>ytdlp --skip-download --write-subs --sub-lang all -o foo --force-overwrites https://youtu.be/Kn56bMZ9OE8</textarea>
+
+<p>19:</p>
+<textarea readonly>ytdlp -f 396 --embed-subs --write-auto-subs --force-overwrites https://youtu.be/Kn56bMZ9OE8</textarea>
+
+<p>20:</p>
+<textarea readonly>ytdlp -f 396 --embed-subs --write-auto-subs --sub-lang .*-orig --force-overwrites https://youtu.be/Kn56bMZ9OE8</textarea>
+
+<p>21:</p>
+<textarea readonly>ytdlp -f 396 --embed-subs --write-auto-subs --sub-lang en,es --sleep-subtitles 60 --force-overwrites https://youtu.be/Kn56bMZ9OE8</textarea>
+
+<p>22:</p>
+<textarea readonly>ytdlp --skip-download --write-auto-subs --sub-lang .*-orig --force-overwrites https://youtu.be/Kn56bMZ9OE8</textarea>
+
+<p>23:</p>
+<textarea readonly>ytdlp --list-subs https://youtu.be/Kn56bMZ9OE8</textarea>
+
+<p>24:</p>
+<textarea readonly>ytdlp -f 396 --skip-download --write-subs --sub-langs all --sub-format srt --force-overwrites https://youtu.be/Kn56bMZ9OE8</textarea>
+
+<p>25:</p>
+<textarea readonly>ytdlp -F https://www.reddit.com/r/unixporn/comments/1ruepe4/hyprland_this_hyprland_starting_animation_hits/</textarea>
+
+<p>26:</p>
+<textarea readonly>ytdlp https://www.reddit.com/r/unixporn/comments/1ruepe4/hyprland_this_hyprland_starting_animation_hits/</textarea>
+
+<p>27:</p>
+<textarea readonly>ffprobe sample_video.mov</textarea>
+
+<p>28:</p>
+<textarea readonly>ffmpeg -i sample_video.mov -c copy sample_video.mp4</textarea>
+
+<p>29:</p>
+<textarea readonly>ffmpeg -i sample_video.mov -c copy -f mp4 sample_video_no_ext</textarea>
+
+<p>30:</p>
+<textarea readonly>fc sample_video.mp4 sample_video_no_ext</textarea>
+
+<p>31:</p>
+<textarea readonly>diff sample_video.mp4 sample_video_no_ext</textarea>
+
+<p>32:</p>
+<textarea rows="3" readonly>
+ffmpeg -i sample_video.mp4 -map 0:v -c copy video_only.mp4
+ffmpeg -i sample_video.mp4 -map 0:a -c copy audio_only.mp4</textarea>
+
+<p>33:</p>
+<textarea rows="3" readonly>
+ffmpeg -i sample_video.mp4 -an -c copy no_audio.mp4
+ffmpeg -i sample_video.mp4 -vn -c copy no_video.mp4</textarea>
+
+<p>34:</p>
+<textarea readonly>ffmpeg -i sample_video.mp4 audio.mp3</textarea>
+
+<p>35:</p>
+<textarea readonly>ffmpeg -i sample_video.mp4 -t 10 -c:v libsvtav1 -c:a libopus transcode.webm</textarea>
+
+<p>36:</p>
+<textarea readonly>ffmpeg -ss 5 -i sample_video.mp4 -t 10 -c:v libsvtav1 -c:a libopus clip.webm</textarea>
+
+<p>37:</p>
+<textarea readonly>ffmpeg -i sample_video.mp4 -ss 5 -to 15 -c:v libsvtav1 -c:a libopus clip.webm</textarea>
+
+<p>38:</p>
+<textarea readonly>ffmpeg -i sample_video.webm -i subs1.vtt -c copy subbed.webm</textarea>
+
+<p>39:</p>
+<textarea readonly>ffmpeg -i sample_video.webm -i subs1.vtt -metadata:s:s language=eng -c copy subbed.webm</textarea>
+
+<p>40:</p>
+<textarea readonly>ffmpeg -i sample_video.webm -i subs1.vtt -metadata:s:s language=eng -metadata:s:s title="Foo Bar" -c copy subbed.webm</textarea>
+
+<p>41:</p>
+<textarea readonly>ffmpeg -i sample_video.webm -i subs1.vtt -i subs2.vtt -map 0 -map 1 -map 2 -metadata:s:s:0 language=eng -metadata:s:s:0 title="Foo Bar 1" -metadata:s:s:1 language=eng -metadata:s:s:1 title="Foo Bar 2" -c copy subbed.webm</textarea>
+
+<p>42:</p>
+<textarea readonly>ffmpeg -i sample_video.mp4 -i subs1.vtt -c copy -c:s mov_text subbed.mp4</textarea>
+
+<p>43:</p>
+<textarea readonly>ffmpeg -i sample_video.mp4 -i subs1.vtt -metadata:s:s language=eng -metadata:s:s title="Foo Bar" -c copy -c:s mov_text subbed.mp4</textarea>
+
+<p>44:</p>
+<textarea readonly>ffprobe subbed.mp4</textarea>
+
+<p>45:</p>
+<textarea readonly>ffmpeg -i sample_video.mp4 -i subs1.vtt -metadata:s:s language=eng -metadata:s:s title="Foo Bar" -metadata:s:s handler_name="Foo Bar" -c copy -c:s mov_text subbed.mp4</textarea>
+
+<p>46:</p>
+<textarea readonly>ffmpeg -i sample_video.webm -vf subtitles=subs1.vtt -t 10 -c:v libsvtav1 -c:a copy baked.webm</textarea>
+
+<p>47:</p>
+<textarea readonly>ffmpeg -i sample_video.webm -t 10 -s 640x360 -c copy -c:v libsvtav1 lowres.webm</textarea>
+
+<p>48:</p>
+<textarea readonly>ffmpeg -i sample_video.webm -t 10 -r 10 -c copy -c:v libsvtav1 lowfps.webm</textarea>
+
+<p>49:</p>
+<textarea readonly>ffprobe lowfps.webm</textarea>
+
+<p>50:</p>
+<textarea readonly>ffmpeg -i sample_video.webm -t 10 -ar 12000 -c copy -c:a libopus lowfreq.webm</textarea>
+
+<p>51:</p>
+<textarea readonly>ffmpeg -i sample_video.webm -t 10 -c:v libsvtav1 -rc 2 -b:v 1500k -c:a copy ctbr.webm</textarea>
+
+<p>52:</p>
+<textarea rows="3" readonly>
+ffmpeg -i sample_video.webm -t 10 -c:v libsvtav1 -c:a copy cq.webm
+ffmpeg -i sample_video.webm -t 10 -c:v libsvtav1 -crf 47 -c:a copy cq47.webm</textarea>
+
+<p>53:</p>
+<textarea readonly>ffmpeg -i sample_video.webm -t 10 -c:v libsvtav1 -maxrate 1500k -bufsize 1000k -c:a copy crbr.webm</textarea>
+
+<p>54:</p>
+<textarea rows="3" readonly>
+ffmpeg -i sample_video.webm -t 5 -c:v libvpx-vp9 -row-mt 1 -b:v 1500k -pass 1 -an -f null -
+ffmpeg -i sample_video.webm -t 5 -c:v libvpx-vp9 -row-mt 1 -b:v 1500k -pass 2 -c:a copy 2pab.webm</textarea>
+
+<p>55:</p>
+<textarea rows="3" readonly>
+ffmpeg -i sample_video.webm -t 5 -c:v libvpx-vp9 -row-mt 1 -b:v 0 -pass 1 -an -f null -
+ffmpeg -i sample_video.webm -t 5 -c:v libvpx-vp9 -row-mt 1 -b:v 0 -pass 2 -c:a copy 2pcq.webm</textarea>
+
+<p>56:</p>
+<textarea readonly>ffmpeg -i sample_video.webm -t 10 -c:v copy -c:a libopus -b:a 10k abr.webm</textarea>
